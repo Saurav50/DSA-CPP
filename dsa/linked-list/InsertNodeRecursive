@@ -1,0 +1,18 @@
+Node* insertNode(Node *head, int i, int data) {
+	//base case
+	Node *temp=head;
+	if(temp==NULL){
+		return temp;
+	}
+	//SMALL CALCULATION
+	if(i==0){
+		Node *newnode= new Node(data);
+		newnode->next=temp;
+		temp=newnode;
+	}
+	//RECURSIVE CALL
+	Node *x=insertNode(temp->next,i-1, data);
+	//HEAD CONNECTION
+	temp->next=x;
+	return temp;
+}

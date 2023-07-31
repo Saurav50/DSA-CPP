@@ -1,0 +1,16 @@
+int findNode(Node *head, int n){
+    Node* temp=head;
+    if(temp==NULL){
+        return -1;
+    }
+    if(temp->data==n){
+        return 0;
+    }
+    int res=findNode(temp->next,n);
+    if(res!=-1){
+        return res+1;
+    }
+    else{
+        return res;
+    }
+}
